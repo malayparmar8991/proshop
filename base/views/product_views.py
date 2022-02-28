@@ -11,7 +11,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 @api_view(['GET'])
 def getProducts(request):
     query = request.query_params.get('keyword')
-    products = Product.objects.filter(name__icontains=query)
+    if(query == None):
+        query = ''
+    products = Product.objects.filter(name__icontains=query).order_by('_id')
     page = request.query_params.get('page')
     paginator = Paginator(products, 5)
     try:
