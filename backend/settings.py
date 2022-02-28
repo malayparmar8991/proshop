@@ -128,7 +128,7 @@ DATABASES = {
         'NAME': 'proshop',
         'USER': 'mkp',
         'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': 'proshop-identifier.cp8ipzxuwyzb.us-east-1.rds.amazonaws.com',
+        'HOST': 'proshop-identifier.cml6tmvhjmqm.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

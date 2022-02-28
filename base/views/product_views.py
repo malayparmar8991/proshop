@@ -15,7 +15,6 @@ def getProducts(request):
     if(query == None):
         query = ''
     products = Product.objects.filter(name__icontains=query).order_by('_id')
-    print("products:"+products)
     page = request.query_params.get('page')
     paginator = Paginator(products, 5)
     try:
@@ -35,7 +34,6 @@ def getProducts(request):
 def getTopProducts(requests):
     print("Inside top products")
     products = Product.objects.filter(rating__gte=4).order_by('-rating')[0:5]
-    print("top:"+products)
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 
