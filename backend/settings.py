@@ -193,5 +193,5 @@ AWS_STORAGE_BUCKET_NAME = 'proshop-mkp-bucket'
 AWS_QUERYSTRING_AUTH = False
 
 
-# if(os.getcwd() == '/app'):
-#     DEBUG = False
+if(os.getcwd() == '/app'):
+    DEBUG = False
